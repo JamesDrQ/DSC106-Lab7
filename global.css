@@ -1,0 +1,38 @@
+
+body {
+  font: 100%/1.5 system-ui, sans-serif;
+  display: flex;
+  flex-flow: column;
+  max-width: 80em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1em;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+}
+
+header label {
+  margin-left: auto;
+  text-align: center;
+}
+
+header input {
+  display: block;
+  width: 200px;
+}
+
+header time,
+header em {
+  display: block;
+  text-align: center;
+}
+
+header em {
+  color: gray;
+  font-style: italic;
+}

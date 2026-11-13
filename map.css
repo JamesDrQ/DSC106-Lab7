@@ -1,0 +1,76 @@
+
+#map {
+  width: 100%;
+  height: 70vh;
+  min-height: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#map {
+  position: relative;
+}
+
+#map svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+/* Shared colors for circles and legend */
+#map svg circle,
+.legend > div {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+}
+
+/* Station circles */
+#map svg circle {
+  fill: var(--color);
+  fill-opacity: 0.6;
+  stroke: white;
+  stroke-width: 1;
+  pointer-events: auto;
+}
+
+/* Legend layout */
+.legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-block: 20px;
+  font-size: 14px;
+}
+
+/* Individual legend items */
+.legend > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Colored swatches */
+.legend > div::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color);
+  flex-shrink: 0;
+}
+
+
